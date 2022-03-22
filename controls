@@ -1,7 +1,9 @@
 import pygame
 import sys
+from bullet import Bullet
+from bullet2 import Bullet2
 
-def events(gun):
+def events(screen,gun,bullets):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
@@ -24,6 +26,9 @@ def events(gun):
                     gun.keyUP_right = True
                 elif event.key == pygame.K_f:
                     gun.keyUP_f = 1
+                elif event.key == pygame.K_SPACE:
+                    new_bullet = Bullet(screen,gun)
+                    bullets.add(new_bullet)
 
 
             elif event.type == pygame.KEYUP:
@@ -45,3 +50,31 @@ def events(gun):
                     gun.keyUP_right = False
                 # elif event.key == pygame.K_f:
                 #     gun.keyUP_f = 0
+                elif event.key == pygame.K_e:
+                    new_bullet2 = Bullet2(screen,gun)
+                    bullets.add(new_bullet2)
+
+
+def update(bg_color, screen, gun, bullets):
+    screen.fill(bg_color)
+    for bullet in bullets.sprites():
+        bullet.drawBullet()
+    gun.output()
+    pygame.display.flip()
+
+
+
+def update2(bg_color, screen, gun, bullets):
+    screen.fill(bg_color)
+    for bullet2 in bullets.sprites():
+        bullet2.drawBullet()
+    gun.output()
+    pygame.display.flip()
+
+
+def delete(bullets):
+    bullets.update()
+    for bullet in bullets.copy():
+        if bullet.rect.bottom <= 0:
+            bullets.remove(bullet)
+
