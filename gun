@@ -41,21 +41,21 @@ class RPG():
             #движение
     def update_gun(self):
         if self.keyUP_a == True:
-            self.rect.centerx -=2
+            self.rect.centerx -=1
             if self.rect.centerx<1:
-                self.rect.centerx += 2
+                self.rect.centerx += 1
         elif self.keyUP_d == True:
-            self.rect.centerx +=2
+            self.rect.centerx +=1
             if self.rect.centerx>1920:
                 self.rect.centerx -= 2
         elif self.keyUP_w == True:
-            self.rect.centery -=2
+            self.rect.centery -=1
             if self.rect.centery<1:
-                self.rect.centery += 2
+                self.rect.centery += 1
         elif self.keyUP_s == True:
-            self.rect.centery +=2
+            self.rect.centery +=1
             if self.rect.centery>1080:
-                self.rect.centery -= 2
+                self.rect.centery -= 1
 
     def update_gun2(self):
         if self.keyUP_left == True:
@@ -77,16 +77,16 @@ class RPG():
 
 
 
-    def mit(self):
-        if self.rect.centery == self.rect2.centery:
-            self.rect.centery += 1
-            self.rect2.centery += 2
-        elif self.rect2.centerx == self.rect.centerx:
-            self.rect2.centerx -= 2
-            self.rect.centerx -= 1
-        if self.rect.centery == self.rect2.centery:
-            self.rect.centery -= 1
-            self.rect2.centery -= 2
-        elif self.rect2.centerx == self.rect.centerx:
-            self.rect2.centerx -= 2
-            self.rect.centerx -= 1
+ #   def mit(self):
+  #      if self.rect.centery == self.rect2.centery:
+   #         self.rect.centery += 1
+    #        self.rect2.centery += 2
+     #   elif self.rect2.centerx == self.rect.centerx:
+      #      self.rect2.centerx -= 2
+       #     self.rect.centerx -= 1
+        #if self.rect.centery == self.rect2.centery:
+         #   self.rect.centery -= 1
+          #  self.rect2.centery -= 2
+        #elif self.rect2.centerx == self.rect.centerx:
+         #   self.rect2.centerx -= 2
+          #  self.rect.centerx -= 1
