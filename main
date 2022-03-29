@@ -19,7 +19,7 @@ def run():
         gun.update_gun()
         gun.update_gun2()
         controls.update(bg_color, screen, gun, bullets)
-        controls.update2(bg_color, screen, gun, bullets)
+#        controls.update2(bg_color, screen, gun, bullets)
         controls.delete(bullets)
 #        gun.mit()
 
