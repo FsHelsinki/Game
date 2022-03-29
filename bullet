@@ -14,9 +14,21 @@ class Bullet(pygame.sprite.Sprite):
         self.rect.top = gun.rect.top
         self.y = float(self.rect.y)
 
+        self.rect2 = pygame.Rect(0, 0, 2, 12)
+        self.color2 = 255, 0, 0
+        self.speed2 = 3
+        self.rect2.centerx = gun.rect.centerx
+        self.rect2.top = gun.rect.top
+        self.y2 = float(self.rect.y)
+
     def update(self):
         self.y -= self.speed
         self.rect.y = self.y
 
+
+        self.y2 -= self.speed2
+        self.rect2.y = self.y2
+
     def drawBullet(self):
         pygame.draw.rect(self.screen, self.color, self.rect)
+        pygame.draw.rect(self.screen, self.color2, self.rect2)
